@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: socket-chat-backend
+
+app:
+  tcp:
+    port: 19090
+    backlog: 50
+  thread-pool:
+    core-size: 4
+    max-size: 16
+    queue-capacity: 100
+    thread-name-prefix: socket-worker-
+
+logging:
+  level:
+    com.demo.chat: INFO

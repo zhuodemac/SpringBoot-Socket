@@ -1,0 +1,19 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: socket-chat-backend
+    ports:
+      - "8080:8080"
+      - "19090:19090"
+    environment:
+      TZ: Asia/Shanghai
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: socket-chat-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend

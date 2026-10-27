@@ -1,0 +1,172 @@
+:root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --line: #334155;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --ok: #34d399;
+    --warn: #fbbf24;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: radial-gradient(circle at top, #1e3a5f, var(--bg) 45%);
+    color: var(--text);
+}
+
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    margin: 0 0 8px;
+}
+
+header p, .muted {
+    color: var(--muted);
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+.badge.on {
+    color: var(--ok);
+    border-color: var(--ok);
+}
+
+.badge.off {
+    color: var(--warn);
+    border-color: var(--warn);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 16px;
+}
+
+.chat-panel, article {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.messages {
+    height: 460px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.message {
+    background: #0b1220;
+    border-radius: 12px;
+    padding: 10px 12px;
+}
+
+.message .meta {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.message.system {
+    opacity: 0.8;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    gap: 8px;
+}
+
+input, button {
+    border: 1px solid var(--line);
+    background: #0b1220;
+    color: var(--text);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+button {
+    background: var(--accent);
+    color: #082f49;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 12px;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 220px;
+    overflow: auto;
+}
+
+li {
+    border-bottom: 1px solid var(--line);
+    padding: 8px 0;
+    font-size: 13px;
+}
+
+pre {
+    background: #0b1220;
+    padding: 12px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+    main, form, header {
+        display: block;
+    }
+
+    form input, form button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}
